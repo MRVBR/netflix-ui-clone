@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Netflix – Browse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +13,7 @@
           <img
             src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
             class="brand__logo"
+            alt="Netflix Logo"
           />
         </div>
 
@@ -28,12 +29,10 @@
     </main>
 
     <script>
-      // Protect page
       if (!localStorage.getItem("netflix_logged_in")) {
         window.location.href = "index.html";
       }
 
-      // Logout
       document
         .querySelector(".signin__button")
         .addEventListener("click", () => {
