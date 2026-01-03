@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Netflix – Browse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar__brand">
+          <img
+            src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
+            class="brand__logo"
+          />
+        </div>
+
+        <div class="navbar__nav__items">
+          <button class="signin__button">Logout</button>
+        </div>
+      </nav>
+    </header>
+
+    <main style="padding: 4rem; color: white;">
+      <h1>Browse Movies</h1>
+      <p>Welcome! You are logged in.</p>
+    </main>
+
+    <script>
+      // Protect page
+      if (!localStorage.getItem("netflix_logged_in")) {
+        window.location.href = "index.html";
+      }
+
+      // Logout
+      document
+        .querySelector(".signin__button")
+        .addEventListener("click", () => {
+          localStorage.removeItem("netflix_logged_in");
+          window.location.href = "index.html";
+        });
+    </script>
+  </body>
+</html>
